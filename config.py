@@ -21,7 +21,7 @@ POSTGRES_CONFIG = {
 # Migration settings
 MIGRATION_CONFIG = {
     'batch_size': 1000,  # Batch size for insertion
-    'skip_tables': ['vx_principal'],   # Tables to skip (including views)
+    'skip_tables': ['vx_principal', 'vx_trx_log'],   # Tables to skip (including views)
     'log_level': 'INFO',  # Logging level
     'truncate_before_insert': True,  # Clear tables before insertion
     'skip_missing_tables': True  # Skip missing tables
@@ -182,4 +182,5 @@ TYPE_CONVERSIONS = {
         'conversion': lambda x: True if x == 1 else False if x == 0 else None
     },
     # Other type conversions can be added here
+
 }
